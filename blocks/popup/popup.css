@@ -5,6 +5,7 @@
 @import url(./__input/popup__input.css);
 
 .popup {
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
