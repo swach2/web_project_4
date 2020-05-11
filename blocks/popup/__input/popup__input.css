@@ -1,0 +1,8 @@
+.popup__input {
+  opacity: 0.2;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  padding: 0;
+  padding-top: 24px;
+  width: 100%;
+}
