@@ -6,7 +6,7 @@
   margin: auto;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:919px) {
   .elements {
     padding-top: 36px;
     width: 282px;
