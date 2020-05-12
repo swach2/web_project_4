@@ -1,7 +1,7 @@
 // Modal open and close
 let modal = document.querySelector(".popup");
 let modalopen = document.querySelector(".edit-button")
-let modalclose = document.querySelector(".popup__icon");
+let modalclose = document.querySelector(".close-button");
 let submitbtn = document.querySelector(".save-button");
 
 modalopen.onclick = function() {
