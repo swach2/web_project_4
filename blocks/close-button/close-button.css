@@ -1,0 +1,22 @@
+@import url(./__image/close-button__image.css);
+
+.close-button {
+  height: 40.7px;
+  width: 40.7px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  font-size: 0;
+  position: fixed;
+  right: calc(50% - 215px - 32px);
+  top: calc(50% - 165px - 32px);
+}
+
+@media screen and (max-width:919px) {
+  .close-button {
+    height: 25px;
+    width: 25px;
+    right: calc(50% - 141px - 20px);
+    top: calc(50% - 165px - 20px);
+  }
+}
