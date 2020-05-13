@@ -4,21 +4,20 @@ let modalopen = document.querySelector(".edit-button")
 let modalclose = document.querySelector(".close-button");
 let submitbtn = document.querySelector(".save-button");
 
-modalopen.onclick = function() {
-  modal.style.display = "block";
-}
+modalopen.addEventListener("click", function () {
+  modal.className += " popup_opened";
+});
 
-modalclose.onclick = function() {
-  modal.style.display = "none";
-}
+modalclose.addEventListener("click", function () {
+  modal.className = modal.className.replace( /(?:^|\s)popup_opened(?!\S)/g , '' );
+});
 
-submitbtn.onclick = function() {
-  modal.style.display = "none";
-}
+submitbtn.addEventListener("click", function () {
+  modal.className = modal.className.replace( /(?:^|\s)popup_opened(?!\S)/g , '' );
+});
 
 // Save form input
-// Let's find the form in the DOM
-let formElement =  document.querySelector(".popup__form");
+const formElement =  document.querySelector(".popup__form");
 
 // Next is the form submit handler, though
 // it won't submit anywhere just yet
@@ -28,17 +27,17 @@ function formSubmitHandler (evt) {
                                                 // We'll explain it in more detail later.
 
     // Let's find the form fields in the DOM
-    let nameInput = document.querySelector('input[name="profilename"]');
-    let jobInput = document.querySelector('input[name="profiletitle"]');
+    const nameInput = document.querySelector('input[name="profilename"]');
+    const jobInput = document.querySelector('input[name="profiletitle"]');
 
 
     // Get the values of each field from the corresponding value property
-    let newname = nameInput.value;
-    let newjob = jobInput.value;
+    const newname = nameInput.value;
+    const newjob = jobInput.value;
 
     // Select elements where the field values will be entered
-    let nameField = document.querySelector(".profile__name");
-    let jobField = document.querySelector(".profile__title");
+    const nameField = document.querySelector(".profile__name");
+    const jobField = document.querySelector(".profile__title");
 
     // Insert new values using the textContent property of the querySelector() method
     nameField.textContent = newname;

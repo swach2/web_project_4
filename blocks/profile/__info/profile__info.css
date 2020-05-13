@@ -3,11 +3,11 @@
   align-self: center;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 @media screen and (max-width:919px) {
   .profile__info {
-    margin: 0;
     padding-top: 14px;
   }
 }
