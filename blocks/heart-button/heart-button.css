@@ -1,11 +1,10 @@
-@import url(./__image/heart-button__image.css);
-
 .heart-button {
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  padding: 0;
-  font-size: 0;
-  height: 18.13px;
   width: 18.13px;
   margin-top: 31px;
+  background-image: url("../../images/heart-button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }

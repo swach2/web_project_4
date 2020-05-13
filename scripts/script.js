@@ -1,19 +1,19 @@
 // Modal open and close
-let modal = document.querySelector(".popup");
-let modalopen = document.querySelector(".edit-button")
-let modalclose = document.querySelector(".close-button");
-let submitbtn = document.querySelector(".save-button");
+const modal = document.querySelector(".popup");
+const modalopen = document.querySelector(".edit-button")
+const modalclose = document.querySelector(".close-button");
+const submitbtn = document.querySelector(".save-button");
 
 modalopen.addEventListener("click", function () {
-  modal.className += " popup_opened";
+  modal.classList.add("popup_opened");
 });
 
 modalclose.addEventListener("click", function () {
-  modal.className = modal.className.replace( /(?:^|\s)popup_opened(?!\S)/g , '' );
+  modal.classList.remove("popup_opened");
 });
 
 submitbtn.addEventListener("click", function () {
-  modal.className = modal.className.replace( /(?:^|\s)popup_opened(?!\S)/g , '' );
+  modal.classList.remove("popup_opened");
 });
 
 // Save form input
