@@ -9,5 +9,6 @@
 @media screen and (max-width:919px) {
   .profile__info {
     padding-top: 14px;
+    width: 280px;
   }
 }
