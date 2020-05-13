@@ -15,54 +15,50 @@
       <section class="profile">
         <img class="profile__avatar" src="images/avatar.jpeg" alt="Jacques Cousteau avatar">
         <div class="profile__info">
-          <h1 class="profile__name">Jacques Cousteau</h1>
-          <button class="edit-button button"><img class="edit-button__image" src="images/edit-button.svg" alt="Edit button"></button>
-          <h2 class="profile__title">Explorer</h2>
+          <div class="profile__row">
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <button class="edit-button button"><img class="edit-button__image" src="images/edit-button.svg" alt="Edit button"></button>
+          </div>
+          <p class="profile__title">Explorer</p>
         </div>
         <button class="add-button button"><img class="add-button__image" src="images/add-button.svg" alt="Add button"></button>
       </section>
       <section class="elements">
         <ul class="elements__list">
-          <li class="element">
-            <img class="element__image" src="images/yosemite.jpg" alt="Yosemite Valley">
+          <li class="element" style="background-image:url('images/yosemite.jpg')">
             <div class="element__info">
               <h2 class="element__title">Yosemite Valley</h2>
-              <img class="element__icon" src="images/heart.svg" alt="Heart icon">
+              <button class="heart-button"><img class="heart-button__image" src="images/heart.svg" alt="Heart icon"></button>
             </div>
           </li>
-          <li class="element">
-            <img class="element__image" src="images/lake-louise.png" alt="Lake Louise">
+          <li class="element" style="background-image:url('images/lake-louise.png')">
             <div class="element__info">
               <h2 class="element__title">Lake Louise</h2>
-              <img class="element__icon" src="images/heart.svg" alt="Heart icon">
+              <button class="heart-button"><img class="heart-button__image" src="images/heart.svg" alt="Heart icon"></button>
             </div>
           </li>
-          <li class="element">
-            <img class="element__image" src="images/bald.png" alt="Bald Mountains">
+          <li class="element" style="background-image:url('images/bald.png')">
             <div class="element__info">
               <h2 class="element__title">Bald Mountains</h2>
-              <img class="element__icon" src="images/heart.svg" alt="Heart icon">
+              <button class="heart-button"><img class="heart-button__image" src="images/heart.svg" alt="Heart icon"></button>
             </div>
           </li>
-          <li class="element">
-            <img class="element__image" src="images/latemar.png" alt="Latemar">
+          <li class="element" style="background-image:url('images/latemar.png')">
             <div class="element__info">
               <h2 class="element__title">Latemar</h2>
-              <img class="element__icon" src="images/heart.svg" alt="Heart icon">
+              <button class="heart-button"><img class="heart-button__image" src="images/heart.svg" alt="Heart icon"></button>
             </div>
           </li>
-          <li class="element">
-            <img class="element__image" src="images/vanois.png" alt="Vanois">
+          <li class="element" style="background-image:url('images/vanois.png')">
             <div class="element__info">
               <h2 class="element__title">Vanois National...</h2>
-              <img class="element__icon" src="images/heart.svg" alt="Heart icon">
+              <button class="heart-button"><img class="heart-button__image" src="images/heart.svg" alt="Heart icon"></button>
             </div>
           </li>
-          <li class="element">
-            <img class="element__image" src="images/lago-di-braies.png" alt="Lago di Braies">
+          <li class="element" style="background-image:url('images/lago-di-braies.png')">
             <div class="element__info">
               <h2 class="element__title">Lago di Braies</h2>
-              <img class="element__icon" src="images/heart.svg" alt="Heart icon">
+              <button class="heart-button"><img class="heart-button__image" src="images/heart.svg" alt="Heart icon"></button>
             </div>
           </li>
         </ul>
@@ -71,7 +67,7 @@
     <footer class="footer">
       <p class="footer__copyright">© 2020 Around The U.S.</p>
     </footer>
-    <div class="popup popup_opened">
+    <div class="popup">
       <div class="popup__container">
         <button class="close-button button"><img class="close-button__image" src="images/close-icon.png" alt="Close button"></button>
         <p class="popup__caption">Edit profile</p>
