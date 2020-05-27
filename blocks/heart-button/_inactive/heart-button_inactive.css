@@ -1,0 +1,10 @@
+.heart-button_inactive {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  width: 18.13px;
+  margin-top: 31px;
+  background-image: url("../../../images/heart-button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}

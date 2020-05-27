@@ -1,0 +1,7 @@
+@media screen and (max-width:919px) {
+  .newitem__caption {
+    font-size: 18px;
+    padding-top: 30px;
+    margin-left: 20px;
+  }
+}

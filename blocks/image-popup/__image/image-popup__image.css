@@ -1,0 +1,13 @@
+.image-popup__image {
+  background: #FFFFFF;
+  border-radius: 0px;
+  height: 100%;
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+@media screen and (max-width:919px) {
+  .image-popup__image {
+    margin-left: 30px;
+  }
+}
