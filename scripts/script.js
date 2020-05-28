@@ -81,41 +81,7 @@ const imageclose = document.querySelector(".image-popup__close");
 const imagecontainer = document.querySelector(".image-popup__image");
 const imagetitle = document.querySelector(".image-popup__title");
 
-function initialCard() {
-  const elementTemplate = document.querySelector("#element").content;
-
-  for (var i = 0; i < initialCards.length; i++) {
-    var cardinfo = initialCards[i];
-    const itemElement = elementTemplate.cloneNode(true);
-    itemElement.querySelector(".element").style.backgroundImage =  "url('" + cardinfo.link + "')";
-    itemElement.querySelector(".element__title").textContent = cardinfo.name;
-
-    itemElement.querySelector(".delete-button").addEventListener("click", function (evt) {
-        evt.target.closest(".element").remove();
-    });
-
-    itemElement.querySelector(".heart-button_inactive").addEventListener("click", function (evt) {
-        evt.target.classList.toggle('heart-button_active');
-    });
-
-    itemElement.querySelector(".element__click").addEventListener("click", function (evt) {
-        imagemodal.classList.add("popup_opened");
-        imagecontainer.src = evt.target.parentElement.style.backgroundImage.replace('url("','').replace('")','');
-        imagetitle.textContent = evt.target.parentElement.innerText;
-    });
-
-    imageclose.addEventListener("click", function () {
-        imagemodal.classList.remove("popup_opened");
-    });
-
-    elementList.appendChild(itemElement);
-  }
-
-}
-
-window.onload = initialCard();
-
-function newCard(newcardTitle, newcardURL) {
+function addCard(newcardTitle, newcardURL) {
   const elementTemplate = document.querySelector("#element").content;
   const itemElement = elementTemplate.cloneNode(true);
 
@@ -143,6 +109,11 @@ function newCard(newcardTitle, newcardURL) {
   elementList.prepend(itemElement);
 }
 
+for (var i = initialCards.length - 1; i >= 0; i--) {
+    var cardinfo = initialCards[i];
+    addCard(cardinfo.name, cardinfo.link);
+}
+
 const modal_newitem = document.querySelector(".newitem");
 const modalopen_newitem = document.querySelector(".add-button");
 const modalclose_newitem = document.querySelector(".newitem__close");
@@ -163,21 +134,15 @@ submitbtn_newitem.addEventListener("click", function () {
 const newitemformElement =  document.querySelector(".newitem__form");
 
 function newitemformSubmitHandler (evt) {
-    evt.preventDefault(); // This line stops the browser from submitting the form in the default way.
-                                                // Having done so, we can define our own way of submitting the form.
-                                                // We'll explain it in more detail later.
+    evt.preventDefault();
 
-    // Let's find the form fields in the DOM
     const titleInput = document.querySelector('input[name="newitem-title"]');
     const urlInput = document.querySelector('input[name="newitem-url"]');
 
-
-    // Get the values of each field from the corresponding value property
     const newitemTitle = titleInput.value;
     const newitemURL = urlInput.value;
 
-    newCard(newitemTitle, newitemURL);
-
+    addCard(newitemTitle, newitemURL);
 }
 
 newitemformElement.addEventListener('submit', newitemformSubmitHandler);
