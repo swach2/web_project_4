@@ -98,12 +98,9 @@ function initialCard() {
         evt.target.classList.toggle('heart-button_active');
     });
 
-////////////////
     itemElement.querySelector(".element__click").addEventListener("click", function (evt) {
         imagemodal.classList.add("popup_opened");
         imagecontainer.src = evt.target.parentElement.style.backgroundImage.replace('url("','').replace('")','');
-        // imagecontainer.style.backgroundImage = evt.target.parentElement.style.backgroundImage;
-        //console.log(evt.target.parentElement.innerText);
         imagetitle.textContent = evt.target.parentElement.innerText;
     });
 
@@ -111,7 +108,6 @@ function initialCard() {
         imagemodal.classList.remove("popup_opened");
     });
 
-//////////////
     elementList.appendChild(itemElement);
   }
 
@@ -130,8 +126,18 @@ function newCard(newcardTitle, newcardURL) {
       evt.target.closest(".element").remove();
   });
 
-  itemElement.querySelector(".heart-button").addEventListener("click", function (evt) {
+  itemElement.querySelector(".heart-button_inactive").addEventListener("click", function (evt) {
       evt.target.classList.toggle('heart-button_active');
+  });
+
+  itemElement.querySelector(".element__click").addEventListener("click", function (evt) {
+      imagemodal.classList.add("popup_opened");
+      imagecontainer.src = evt.target.parentElement.style.backgroundImage.replace('url("','').replace('")','');
+      imagetitle.textContent = evt.target.parentElement.innerText;
+  });
+
+  imageclose.addEventListener("click", function () {
+      imagemodal.classList.remove("popup_opened");
   });
 
   elementList.prepend(itemElement);

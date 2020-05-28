@@ -1,6 +1,11 @@
 .newitem__close {
   height: 30px;
   width: 30px;
-  right: calc(50% - 120px - 30px);
-  top: calc(50% - 129px - 30px);
+}
+
+@media screen and (max-width:919px) {
+  .newitem__close {
+    right: calc(50% - 120px - 30px);
+    top: calc(50% - 129px - 30px);
+  }
 }
