@@ -24,58 +24,54 @@
         <button class="add-button button"></button>
       </section>
       <section class="elements">
-        <ul class="elements__list">
-          <li class="element" style="background-image:url('images/yosemite.jpg')">
-            <div class="element__info">
-              <h2 class="element__title">Yosemite Valley</h2>
-              <button class="heart-button"></button>
-            </div>
-          </li>
-          <li class="element" style="background-image:url('images/lake-louise.png')">
-            <div class="element__info">
-              <h2 class="element__title">Lake Louise</h2>
-              <button class="heart-button"></button>
-            </div>
-          </li>
-          <li class="element" style="background-image:url('images/bald.png')">
-            <div class="element__info">
-              <h2 class="element__title">Bald Mountains</h2>
-              <button class="heart-button"></button>
-            </div>
-          </li>
-          <li class="element" style="background-image:url('images/latemar.png')">
-            <div class="element__info">
-              <h2 class="element__title">Latemar</h2>
-              <button class="heart-button"></button>
-            </div>
-          </li>
-          <li class="element" style="background-image:url('images/vanois.png')">
-            <div class="element__info">
-              <h2 class="element__title">Vanois National...</h2>
-              <button class="heart-button"></button>
-            </div>
-          </li>
-          <li class="element" style="background-image:url('images/lago-di-braies.png')">
-            <div class="element__info">
-              <h2 class="element__title">Lago di Braies</h2>
-              <button class="heart-button"></button>
-            </div>
-          </li>
-        </ul>
+          <ul class="elements__list">
+            <template id='element'>
+              <li class="element">
+                <div class="element__click"></div>
+                <button class="delete-button button"></button>
+                <div class="element__info">
+                  <h2 class="element__title"></h2>
+                  <button class="heart-button_inactive button"></button>
+                </div>
+              </li>
+            </template>
+          </ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Around The U.S.</p>
     </footer>
-    <div class="popup">
+    <div class="popup profile-popup">
       <div class="popup__container">
-        <button class="close-button button"></button>
+        <button class="close-button profile-close button"></button>
         <p class="popup__caption">Edit profile</p>
-        <form class="popup__form">
-          <input class="popup__input" type="text" name="profilename" value="Jacques Cousteau">
-          <input class="popup__input" type="text" name="profiletitle" value="Explorer">
-          <input class="save-button" type="submit" value="Save">
+        <form class="popup__form profile-form">
+          <input class="popup__input" type="text" name="profile-name" value="Jacques Cousteau">
+          <input class="popup__input" type="text" name="profile-title" value="Explorer">
+          <input class="save-button profile-save" type="submit" value="Save">
         </form>
+      </div>
+    </div>
+    <div class="popup newitem">
+      <div class="popup__container newitem__container">
+        <button class="close-button newitem__close button"></button>
+        <p class="popup__caption newitem__caption">New place</p>
+        <form class="popup__form newitem__form">
+          <input class="popup__input newitem__input" type="text" name="newitem-title" placeholder="Title">
+          <input class="popup__input newitem__input" type="text" name="newitem-url" placeholder="Image link">
+          <input class="save-button newitem__save" type="submit" value="Create">
+        </form>
+      </div>
+    </div>
+    <div class="image-popup">
+      <div class="image-popup__container">
+        <div class="image-popup__content">
+          <div class="image-popup__row">
+            <img class="image-popup__image">
+            <button class="close-button image-popup__close button"></button>
+          </div>
+          <p class="image-popup__title"></p>
+        </div>
       </div>
     </div>
   </div>

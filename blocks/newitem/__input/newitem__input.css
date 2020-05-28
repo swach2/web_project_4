@@ -1,0 +1,8 @@
+@media screen and (max-width:919px) {
+  .newitem__input {
+    font-size: 12px;
+    line-height: 1.25;
+    padding-top: 20px;
+    padding-bottom: 12px;
+  }
+}

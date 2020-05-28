@@ -1,0 +1,6 @@
+.newitem__close {
+  height: 30px;
+  width: 30px;
+  right: calc(50% - 120px - 30px);
+  top: calc(50% - 129px - 30px);
+}

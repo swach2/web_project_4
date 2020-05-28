@@ -1,0 +1,8 @@
+@media screen and (max-width:919px) {
+  .newitem__container {
+    width: 240px;
+    height: 258px;
+    margin-left: -120px;
+    margin-top: -129px;
+  }
+}
