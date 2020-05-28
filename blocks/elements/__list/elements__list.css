@@ -1,9 +1,8 @@
 .elements__list {
   display: flex;
   flex-wrap: wrap;
-  grid-column-gap: 18px;
-  grid-row-gap: 20px;
   list-style: none;
   margin: 0;
   padding-left: 0;
+  justify-content: space-between;
 }
