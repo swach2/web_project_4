@@ -1,92 +1,73 @@
-// Modal open and close
-const modal_profile = document.querySelector(".profile-popup");
-const modalopen_profile = document.querySelector(".edit-button")
-const modalclose_profile = document.querySelector(".profile-close");
-const submitbtn_profile = document.querySelector(".profile-save");
+const profileModal = document.querySelector(".profile-popup");
+const profileEdit = document.querySelector(".edit-button")
+const profileClose = document.querySelector(".profile-close");
+const profileSubmit = document.querySelector(".profile-save");
+const profileForm =  document.querySelector(".profile-form");
 
-modalopen_profile.addEventListener("click", function () {
-  modal_profile.classList.add("popup_opened");
+profileEdit.addEventListener("click", function () {
+  profileModal.classList.add("popup_opened");
 });
 
-modalclose_profile.addEventListener("click", function () {
-  modal_profile.classList.remove("popup_opened");
+profileClose.addEventListener("click", function () {
+  profileModal.classList.remove("popup_opened");
 });
 
-submitbtn_profile.addEventListener("click", function () {
-  modal_profile.classList.remove("popup_opened");
+profileSubmit.addEventListener("click", function () {
+  profileModal.classList.remove("popup_opened");
 });
 
-// Save form input
-const profileformElement =  document.querySelector(".profile-form");
+const nameInput = document.querySelector('input[name="profile-name"]');
+const jobInput = document.querySelector('input[name="profile-title"]');
+const nameField = document.querySelector(".profile__name");
+const jobField = document.querySelector(".profile__title");
 
-// Next is the form submit handler, though
-// it won't submit anywhere just yet
-function formSubmitHandler (evt) {
-    evt.preventDefault(); // This line stops the browser from submitting the form in the default way.
-                                                // Having done so, we can define our own way of submitting the form.
-                                                // We'll explain it in more detail later.
-
-    // Let's find the form fields in the DOM
-    const nameInput = document.querySelector('input[name="profile-name"]');
-    const jobInput = document.querySelector('input[name="profile-title"]');
-
-
-    // Get the values of each field from the corresponding value property
-    const newname = nameInput.value;
-    const newjob = jobInput.value;
-
-    // Select elements where the field values will be entered
-    const nameField = document.querySelector(".profile__name");
-    const jobField = document.querySelector(".profile__title");
-
-    // Insert new values using the textContent property of the querySelector() method
-    nameField.textContent = newname;
-    jobField.textContent = newjob;
+function profileSubmitHandler (evt) {
+    evt.preventDefault();
+    nameField.textContent = nameInput.value;
+    jobField.textContent = jobInput.value;
 }
 
-// Connect the handler to the form:
-// it will watch the submit event
-profileformElement.addEventListener('submit', formSubmitHandler);
+profileForm.addEventListener('submit', profileSubmitHandler);
 
 const initialCards = [
     {
-        name: "Yosemite Valley",
-        link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
-    },
-    {
-        name: "Lake Louise",
-        link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
-    },
-    {
-        name: "Bald Mountains",
-        link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
-    },
-    {
-        name: "Latemar",
-        link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+        name: "Lago di Braies",
+        link: "https://code.s3.yandex.net/web-code/lago.jpg"
     },
     {
         name: "Vanois National Park",
         link: "https://code.s3.yandex.net/web-code/vanois.jpg"
     },
     {
-        name: "Lago di Braies",
-        link: "https://code.s3.yandex.net/web-code/lago.jpg"
+        name: "Latemar",
+        link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+    },
+    {
+        name: "Bald Mountains",
+        link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+    },
+    {
+        name: "Lake Louise",
+        link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+    },
+    {
+        name: "Yosemite Valley",
+        link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
     }
 ];
 
 const elementList = document.querySelector(".elements__list");
-const imagemodal = document.querySelector(".image-popup");
-const imageclose = document.querySelector(".image-popup__close");
-const imagecontainer = document.querySelector(".image-popup__image");
-const imagetitle = document.querySelector(".image-popup__title");
+const imageModal = document.querySelector(".image-popup");
+const imageClose = document.querySelector(".image-popup__close");
+const imageContainer = document.querySelector(".image-popup__image");
+const imageTitle = document.querySelector(".image-popup__title");
 
-function addCard(newcardTitle, newcardURL) {
+function addCard(cardTitle, cardLink) {
   const elementTemplate = document.querySelector("#element").content;
   const itemElement = elementTemplate.cloneNode(true);
 
-  itemElement.querySelector(".element").style.backgroundImage =  "url('" + newcardURL + "')";
-  itemElement.querySelector(".element__title").textContent = newcardTitle;
+  itemElement.querySelector(".element").style.backgroundImage =  "url('" + cardLink + "')";
+  itemElement.querySelector(".element__title").textContent = cardTitle;
 
   itemElement.querySelector(".delete-button").addEventListener("click", function (evt) {
       evt.target.closest(".element").remove();
@@ -97,52 +78,44 @@ function addCard(newcardTitle, newcardURL) {
   });
 
   itemElement.querySelector(".element__click").addEventListener("click", function (evt) {
-      imagemodal.classList.add("popup_opened");
-      imagecontainer.src = evt.target.parentElement.style.backgroundImage.replace('url("','').replace('")','');
-      imagetitle.textContent = evt.target.parentElement.innerText;
+      imageModal.classList.add("popup_opened");
+      imageContainer.src = evt.target.parentElement.style.backgroundImage.replace('url("','').replace('")','');
+      imageTitle.textContent = evt.target.parentElement.innerText;
   });
 
-  imageclose.addEventListener("click", function () {
-      imagemodal.classList.remove("popup_opened");
+  imageClose.addEventListener("click", function () {
+      imageModal.classList.remove("popup_opened");
   });
 
   elementList.prepend(itemElement);
 }
 
-for (var i = initialCards.length - 1; i >= 0; i--) {
-    var cardinfo = initialCards[i];
-    addCard(cardinfo.name, cardinfo.link);
-}
+initialCards.forEach(card => addCard(card.name, card.link));
 
-const modal_newitem = document.querySelector(".newitem");
-const modalopen_newitem = document.querySelector(".add-button");
-const modalclose_newitem = document.querySelector(".newitem__close");
-const submitbtn_newitem = document.querySelector(".newitem__save");
+const cardModal = document.querySelector(".newitem");
+const cardAdd = document.querySelector(".add-button");
+const cardClose= document.querySelector(".newitem__close");
+const cardCreate = document.querySelector(".newitem__save");
+const cardForm =  document.querySelector(".newitem__form");
 
-modalopen_newitem.addEventListener("click", function () {
-  modal_newitem.classList.add("popup_opened");
+cardAdd.addEventListener("click", function () {
+  cardModal.classList.add("popup_opened");
 });
 
-modalclose_newitem.addEventListener("click", function () {
-  modal_newitem.classList.remove("popup_opened");
+cardClose.addEventListener("click", function () {
+  cardModal.classList.remove("popup_opened");
 });
 
-submitbtn_newitem.addEventListener("click", function () {
-  modal_newitem.classList.remove("popup_opened");
+cardCreate.addEventListener("click", function () {
+  cardModal.classList.remove("popup_opened");
 });
 
-const newitemformElement =  document.querySelector(".newitem__form");
+const titleInput = document.querySelector('input[name="newitem-title"]');
+const urlInput = document.querySelector('input[name="newitem-url"]');
 
-function newitemformSubmitHandler (evt) {
+function cardSubmitHandler (evt) {
     evt.preventDefault();
-
-    const titleInput = document.querySelector('input[name="newitem-title"]');
-    const urlInput = document.querySelector('input[name="newitem-url"]');
-
-    const newitemTitle = titleInput.value;
-    const newitemURL = urlInput.value;
-
-    addCard(newitemTitle, newitemURL);
+    addCard(titleInput.value, urlInput.value);
 }
 
-newitemformElement.addEventListener('submit', newitemformSubmitHandler);
+cardForm.addEventListener('submit', cardSubmitHandler);
