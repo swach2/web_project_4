@@ -41,30 +41,33 @@
     <footer class="footer">
       <p class="footer__copyright">© 2020 Around The U.S.</p>
     </footer>
-    <div class="popup profile-popup">
+    <div class="profile-popup popup">
       <div class="popup__container">
         <button class="close-button profile-close button"></button>
         <p class="popup__caption">Edit profile</p>
-        <form class="popup__form profile-form">
-          <input class="popup__input" type="text" name="profile-name" value="Jacques Cousteau">
-          <input class="popup__input" type="text" name="profile-title" value="Explorer">
-          <input class="save-button profile-save" type="submit" value="Save">
+        <form class="popup__form profile-form" novalidate>
+          <input id="name-input" class="popup__input" type="text" name="profile-name" placeholder="Name" value="Jacques Cousteau" minlength="2" maxlength="40" required>
+          <span id="name-input-error" class="popup__input-error"></span>
+          <input id="job-input" class="popup__input" type="text" name="profile-title" placeholder="About" value="Explorer" minlength="2" maxlength="200" required>
+          <span id="job-input-error" class="popup__input-error"></span>
+          <input class="popup__button profile-save" type="submit" value="Save">
         </form>
       </div>
     </div>
-    <div class="popup newitem">
+    <div class="newitem popup">
       <div class="popup__container newitem__container">
         <button class="close-button newitem__close button"></button>
         <p class="popup__caption newitem__caption">New place</p>
-        <form class="popup__form newitem__form">
-          <input class="popup__input newitem__input" type="text" name="newitem-title" placeholder="Title">
-          <input class="popup__input newitem__input" type="text" name="newitem-url" placeholder="Image link">
-          <input class="save-button newitem__save" type="submit" value="Create">
+        <form class="popup__form newitem__form" novalidate>
+          <input id="title-input" class="popup__input newitem__input" type="text" name="newitem-title" placeholder="Title" minlength="1" maxlength="30" required>
+          <span id="title-input-error" class="popup__input-error"></span>
+          <input id="url-input" class="popup__input newitem__input" type="url" name="newitem-url" placeholder="Image link" required>
+          <span id="url-input-error" class="popup__input-error"></span>
+          <input class="popup__button newitem__save" type="submit" value="Create">
         </form>
       </div>
     </div>
-    <div class="popup image-popup">
-      <div class="image-popup__container">
+    <div class="image-popup popup">
         <div class="image-popup__content">
           <div class="image-popup__row">
             <img class="image-popup__image">
@@ -72,9 +75,9 @@
           </div>
           <p class="image-popup__title"></p>
         </div>
-      </div>
     </div>
   </div>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
