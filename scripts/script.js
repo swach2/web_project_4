@@ -1,3 +1,4 @@
+// profile edit popup
 const profileModal = document.querySelector(".profile-popup");
 const profileEdit = document.querySelector(".edit-button")
 const profileClose = document.querySelector(".profile-close");
@@ -16,6 +17,7 @@ profileSubmit.addEventListener("click", function () {
   profileModal.classList.remove("popup_opened");
 });
 
+// profile edit change
 const nameInput = document.querySelector('input[name="profile-name"]');
 const jobInput = document.querySelector('input[name="profile-title"]');
 const nameField = document.querySelector(".profile__name");
@@ -25,10 +27,11 @@ function profileSubmitHandler (evt) {
     evt.preventDefault();
     nameField.textContent = nameInput.value;
     jobField.textContent = jobInput.value;
-}
+};
 
 profileForm.addEventListener('submit', profileSubmitHandler);
 
+// initial cards array
 const initialCards = [
     {
         name: "Lago di Braies",
@@ -56,6 +59,7 @@ const initialCards = [
     }
 ];
 
+// add card
 const elementList = document.querySelector(".elements__list");
 const imageModal = document.querySelector(".image-popup");
 const imageClose = document.querySelector(".image-popup__close");
@@ -92,6 +96,7 @@ function addCard(cardTitle, cardLink) {
 
 initialCards.forEach(card => addCard(card.name, card.link));
 
+// image expand popup
 const cardModal = document.querySelector(".newitem");
 const cardAdd = document.querySelector(".add-button");
 const cardClose= document.querySelector(".newitem__close");
@@ -119,3 +124,24 @@ function cardSubmitHandler (evt) {
 }
 
 cardForm.addEventListener('submit', cardSubmitHandler);
+
+// ESC key to close popups
+const popupModal = document.querySelectorAll('.popup');
+function keyHandler(evt) {
+  const popupModalOpen = document.querySelector('.popup_opened');
+  if (evt.keyCode == 27) {
+    popupModalOpen.classList.remove('popup_opened');
+  }
+}
+
+document.addEventListener('keydown', keyHandler);
+
+// overlay click to close popups
+function clickHandler(evt) {
+  const popupModalOpen = document.querySelector('.popup_opened');
+  if (evt.target == popupModalOpen) {
+    popupModalOpen.classList.remove('popup_opened');
+  }
+};
+
+window.addEventListener('click', clickHandler);
