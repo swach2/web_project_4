@@ -3,4 +3,5 @@
   width: 282px;
   height: calc(282px - 18px - 19.3px);
   margin-top: calc(18px + 19.3px);
+  cursor: pointer;
 }
