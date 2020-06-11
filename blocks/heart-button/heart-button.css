@@ -1,2 +1,10 @@
-@import url(./_inactive/heart-button_inactive.css);
-@import url(./_active/heart-button_active.css);
+.heart-button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  width: 18.13px;
+  margin-top: 31px;
+  background-image: url("../../images/heart-button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}

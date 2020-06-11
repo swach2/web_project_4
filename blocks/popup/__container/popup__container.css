@@ -9,6 +9,7 @@
   left: 50%;
   margin-top: -165px;
   margin-left: -215px;
+  cursor: default;
 }
 
 @media screen and (max-width:919px) {

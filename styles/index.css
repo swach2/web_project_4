@@ -1,5 +1,6 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
+@import url(../blocks/page-body/page-body.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/profile/profile.css);
@@ -10,9 +11,10 @@
 @import url(../blocks/element/element.css);
 @import url(../blocks/delete-button/delete-button.css);
 @import url(../blocks/heart-button/heart-button.css);
+@import url(../blocks/heart-button/_active/heart-button_active.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/close-button/close-button.css);
 @import url(../blocks/newitem/newitem.css);
 @import url(../blocks/image-popup/image-popup.css);
-@import url(../blocks/popup/popup_opened.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
