@@ -1,0 +1,9 @@
+.element__card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: 282px 282px;
+  width: 282px;
+  height: 361px;
+  margin-bottom: 20px;
+}
