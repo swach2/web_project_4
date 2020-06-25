@@ -19,7 +19,6 @@ editFormValidator.enableValidation();
 cardFormValidator.enableValidation();
 
 // ESC key to close popups
-const popupModal = document.querySelectorAll('.popup');
 function keyHandler(evt) {
   const popupModalOpen = document.querySelector('.popup_opened');
   if (evt.key === "Escape") {
@@ -33,7 +32,7 @@ function clickHandler(evt) {
   if (evt.target == popupModalOpen) {
     popupModalOpen.classList.remove('popup_opened');
   }
-};
+}
 
 // open modal function
 function openModal (modalClass) {
@@ -77,7 +76,7 @@ function profileSubmitHandler (evt) {
     evt.preventDefault();
     nameField.textContent = nameInput.value;
     jobField.textContent = jobInput.value;
-};
+}
 
 profileForm.addEventListener('submit', profileSubmitHandler);
 

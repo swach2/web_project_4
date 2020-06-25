@@ -31,6 +31,7 @@ class Card {
 
   _handleDeleteClick() {
     this._element.closest(".element").remove();
+    this._element = null;
   }
 
   _handleHeartClick() {
@@ -38,8 +39,10 @@ class Card {
   }
 
   _handleImageClick() {
+    const imagePopupImage = document.querySelector(".image-popup__image");
     document.querySelector(".image-popup").classList.toggle('popup_opened');
-    document.querySelector(".image-popup__image").src = this._link;
+    imagePopupImage.src = this._link;
+    imagePopupImage.alt = this._text;
     document.querySelector(".image-popup__title").textContent = this._text;
     document.addEventListener('keydown', keyHandler);
     window.addEventListener('click', clickHandler);
