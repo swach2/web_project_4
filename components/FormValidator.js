@@ -1,4 +1,4 @@
-class FormValidation {
+export default class FormValidation {
   constructor(config, formElement) {
     this._formElement = formElement;
     this._inputSelector = config.inputSelector;
@@ -70,9 +70,6 @@ class FormValidation {
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-
     this._setEventListeners();
   }
 }
-
-export default FormValidation;

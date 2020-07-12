@@ -1,5 +1,5 @@
 # Around The U.S.
-## Yandex Web Development Project 7
+## Yandex Web Development Project 8
 
 This is a website for a project titled "Around The U.S." where it will be an interactive page where users can add, remove, or like photos.  
 
