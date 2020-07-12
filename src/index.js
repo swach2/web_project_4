@@ -67,9 +67,8 @@ const cardsList = new Section(
 cardsList.renderItems();
 
 // add card popup
-function cardSubmitHandler (evt) {
-  const info = { text: evt["newitem-title"], link: evt["newitem-url"] };
-  cardsList.addItems(newCard(info));
+function cardSubmitHandler({ "newitem-title": text, "newitem-url": link }) {
+  cardsList.addItems(newCard({ text, link }));
 }
 
 const cardPopup = new PopupWithForm(cardModal, cardSubmitHandler);
