@@ -1,30 +1,3 @@
-export const initialCards = [
-  {
-    text: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
-  },
-  {
-    text: "Vanois National Park",
-    link: "https://code.s3.yandex.net/web-code/vanois.jpg",
-  },
-  {
-    text: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-  },
-  {
-    text: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-  },
-  {
-    text: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-  },
-  {
-    text: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-  },
-];
-
 export const defaultConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -43,6 +16,8 @@ export const imageModal = ".image-popup";
 export const cardModal = ".newitem";
 export const cardSelector = ".element-template";
 export const profileEdit = document.querySelector(".edit-button");
-export const nameInput = document.querySelector('input[name="profile-name"]');
-export const jobInput = document.querySelector('input[name="profile-title"]');
 export const cardAdd = document.querySelector(".add-button");
+export const avatarSelector = ".profile__avatar";
+export const avatarModal = ".avatar-popup";
+export const avatarEdit = document.querySelector(".avatar-button");
+export const deleteModal = ".delete-popup"
